@@ -1,5 +1,6 @@
 var playerInfo = {
   name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
@@ -158,7 +159,7 @@ else {
   window.alert("Thank you for playing Robot Gladiators! Come back soon!");
 }
 }
-
+startGame();
 var shop = function() {
   var shopOptionPrompt = window.prompt("Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice.");
 
@@ -193,9 +194,20 @@ var randomNumber = function(max,min) {
   return value;
 };
 
-startGame();
 
-  
+var getPlayerName = function() {
+  var name = "";
+
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+
+  console.log("Your robot's name is " + name);
+  return name;
+  getPlayerName();
+};
+
+
 
 
 
